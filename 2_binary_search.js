@@ -24,4 +24,19 @@ function binarySearch(arr, item) {
 	}
 }
 
-console.log(binarySearch(array, 15))
+console.log('Binary:', binarySearch(array, 15))
+
+
+function recursiveBinarySearch(arr, item, start, end) {
+	middle = Math.floor((start + end) / 2)
+	if (item === arr[middle]) {
+		return middle
+	}
+	if (item < arr[middle]) {
+		return recursiveBinarySearch(arr, item, start, middle - 1)
+	} else {
+		return recursiveBinarySearch(arr, item, middle + 1, end)
+	}
+}
+
+console.log('Recursive binary:', recursiveBinarySearch(array, 16, 0, array.length))
